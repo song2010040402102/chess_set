@@ -1,0 +1,2 @@
+killall Websocket
+killall consix
