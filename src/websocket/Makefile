@@ -1,5 +1,5 @@
 CC 		= gcc
-CFLAGS 	= -Wall -Wextra -Werror -pedantic -ggdb -DRUPIFY -g
+CFLAGS 	= -Wall -Wextra -Werror -pedantic -ggdb -DRUPIFY -g -std=c99
 
 INCL 	= Handshake.c
 OBJECTS = Errors.o Datastructures.o Communicate.o sha1.o md5.o base64.o utf8.o service.o ../common/util.o ../common/socket_i.o
@@ -10,7 +10,7 @@ EXEC 	= Websocket
 all: clean Websocket
 
 Websocket: $(OBJECTS) 
-	$(CC) $(CFLAGS) $(INCL) $(OBJECTS) -lpthread $(EXEC).c -o $(EXEC) -std=c99
+	$(CC) $(CFLAGS) $(INCL) $(OBJECTS) -lpthread $(EXEC).c -o $(EXEC) 
 
 clean:
 	rm -f $(EXEC) *.o
